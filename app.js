@@ -20,7 +20,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
-
+// const MONGO_URL = "mongodb://127.0.0.1:27017/Wanderlust_2";  // MongoDB connection string local database ke liye
 const dbUrl = process.env.ATLASDB_URL;
 
 
@@ -63,7 +63,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
-        secret: process.env.SECRET,
+        secret: "mysupersecretcode",
     },
     touchAfter: 24 * 36000,
 });
@@ -74,7 +74,7 @@ store.on("error", () => {
 
 const sessionOptions = {
     store,
-    secret: process.env.SECRET,
+    secret: "mysupersecretcode",
     resave: false,
     saveUninitialized: true,
     cookie: {

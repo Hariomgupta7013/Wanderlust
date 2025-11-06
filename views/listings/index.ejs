@@ -77,14 +77,6 @@
       <div><i class="fa-solid fa-snowflake"></i></div>
       <p>Arctic</p>
     </div>
-    <!-- <div class="filter">
-      <div><i class="fa-solid fa-igloo"></i></div>
-      <p>Domes</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-ship"></i></div>
-      <p>Boats</p>
-    </div> -->
 
     <div class="tax-toggle">
       <div class="form-check-reverse form-switch">
@@ -111,7 +103,7 @@
           alt="listing_image"
           style="height: 20rem"
         />
-        <div class="card-img-overlay">hello world</div>
+        <!-- <div class="card-img-overlay">hello world</div> -->
         <div class="card-body">
           <h5 class="card-title">
             <b> <%= listing.title %> </b>
@@ -145,13 +137,12 @@
   </div>
 <% } %> -->
 
-
 <script>
   let taxSwitch = document.getElementById("switchCheckDefault");
   taxSwitch.addEventListener("click", () => {
     let taxInfo = document.getElementsByClassName("tax-info");
-    for(info of taxInfo) {
-      if(info.style.display != "inline") {
+    for (info of taxInfo) {
+      if (info.style.display != "inline") {
         info.style.display = "inline";
       } else {
         info.style.display = "none";

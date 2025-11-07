@@ -1,0 +1,110 @@
+.navbar {
+    height: 5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-toggler {
+    z-index: 1050;
+    position: relative;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #fe424d !important;
+}
+
+.search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding: 0.4rem 1rem;
+    transition: all 0.3s;
+}
+
+.search-btn:hover {
+    opacity: 0.7;
+}
+
+.search-btn i {
+    margin-right: 0.5rem;
+}
+
+.search-input {
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile Fullscreen Menu */
+@media (max-width: 768px) {
+    #navbarNavAltMarkup.collapse.show {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff !important;
+        /* Fullscreen white background */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        z-index: 9999;
+        overflow-y: auto;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Center search and icons */
+    .search-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    #navbarNavAltMarkup.collapse.show .search-input,
+    #navbarNavAltMarkup.collapse.show .search-btn {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    /* Navbar links stacked vertically and black */
+    #navbarNavAltMarkup.collapse.show .navbar-nav {
+        background-color: #fff !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    #navbarNavAltMarkup.collapse.show .nav-link {
+        color: #000 !important;
+        font-size: 1.2rem;
+    }
+
+    #navbarNavAltMarkup.collapse.show .nav-link:hover {
+        color: #fe424d !important;
+    }
+         #navbarNavAltMarkup.collapse.show form {
+             background-color: #fff;
+         }
+}

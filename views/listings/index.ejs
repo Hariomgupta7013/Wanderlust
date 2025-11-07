@@ -1,45 +1,10 @@
 <% layout("/layouts/boilerplate") %>
 
 <style>
-  #filters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    opacity: 0.7;
-  }
-
-  .filter:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  .filter p {
-    font-size: 0.8rem;
-  }
-
-  .tax-info {
-    display: none;
-  }
-
-  .tax-toggle {
-    border: 1px solid black;
-    border-radius: 1rem;
-    height: 3.5rem;
-    padding: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    align-items: center;
-  }
+  
 </style>
 
 <body>
-  <!-- <h1>All Listings</h1> -->
   <div id="filters">
     <div class="filter">
       <div><i class="fa-solid fa-fire"></i></div>
@@ -55,7 +20,7 @@
     </div>
     <div class="filter">
       <div><i class="fa-solid fa-mountain"></i></div>
-      <p>mountain</p>
+      <p>Mountain</p>
     </div>
     <div class="filter">
       <div><i class="fa-brands fa-fort-awesome"></i></div>
@@ -87,12 +52,13 @@
           id="switchCheckDefault"
         />
         <label class="form-check-label" for="switchCheckDefault"
-          >Display totel after taxes</label
+          >Display total after taxes</label
         >
       </div>
     </div>
   </div>
 
+  <!-- LISTINGS -->
   <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 mt-3">
     <% for(let listing of allListings) { %>
     <a href="/listings/<%= listing._id %>" class="listing-link">
@@ -103,11 +69,8 @@
           alt="listing_image"
           style="height: 20rem"
         />
-        <!-- <div class="card-img-overlay">hello world</div> -->
         <div class="card-body">
-          <h5 class="card-title">
-            <b> <%= listing.title %> </b>
-          </h5>
+          <h5 class="card-title"><b><%= listing.title %></b></h5>
           <p class="card-text"><%= listing.description %></p>
           <p class="card-text">
             <strong>Price:</strong> &#8377;<%=
@@ -120,33 +83,44 @@
         </div>
       </div>
     </a>
-
     <% } %>
   </div>
 </body>
 
-<!-- <% for (let listing of allListings) { %>
-  <div class="card">
-    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image">
-    <div class="card-body">
-      <h5 class="card-title"><%= listing.title %></h5>
-      <p class="card-text"><%= listing.description %></p>
-      <p class="card-text"><strong>Price:</strong> ₹<%= listing.price %></p>
-      <p class="card-text"><%= listing.location %>, <%= listing.country %></p>
-    </div>
-  </div>
-<% } %> -->
-
 <script>
+  // TAX TOGGLE
   let taxSwitch = document.getElementById("switchCheckDefault");
   taxSwitch.addEventListener("click", () => {
     let taxInfo = document.getElementsByClassName("tax-info");
-    for (info of taxInfo) {
-      if (info.style.display != "inline") {
-        info.style.display = "inline";
-      } else {
-        info.style.display = "none";
-      }
+    for (let info of taxInfo) {
+      info.style.display = info.style.display != "inline" ? "inline" : "none";
     }
   });
+
+  // FILTER ACTIVE STATE
+  document.querySelectorAll(".filter").forEach((filter) => {
+    filter.addEventListener("click", () => {
+      document
+        .querySelectorAll(".filter")
+        .forEach((f) => f.classList.remove("active"));
+      filter.classList.add("active");
+    });
+  });
+
+
+  function adjustSwitchLabel() {
+  const label = document.querySelector('.tax-toggle label');
+  if(window.innerWidth <= 480){
+    label.textContent = "After Taxes"; // छोटा text
+  } else if(window.innerWidth <= 768) {
+    label.textContent = "After Taxes";
+  }
+   else {
+    label.textContent = "Display total after taxes"; // full text
+  }
+}
+
+window.addEventListener('resize', adjustSwitchLabel);
+window.addEventListener('load', adjustSwitchLabel);
+
 </script>

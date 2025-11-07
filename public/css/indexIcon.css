@@ -1,0 +1,133 @@
+/* FILTER BAR */
+#filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* horizontal scroll on mobile */
+    padding: 0.5rem 0;
+    gap: 1rem;
+    align-items: center;
+    scrollbar-width: none;
+}
+
+#filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filter {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 0.5rem 0.6rem;
+    /* थोड़ा कम padding */
+    border-radius: 0.5rem;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.filter:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter.active {
+    background-color: #fe424d;
+    color: white;
+}
+
+.filter i {
+    font-size: 1.5rem;
+    /* icons थोड़ा छोटा */
+    display: block;
+    margin-bottom: 0.2rem;
+    transition: font-size 0.2s ease;
+}
+
+.filter p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+/* TAX TOGGLE */
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.4rem 0.8rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.tax-toggle label {
+    font-size: 0.75rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 992px) {
+    .filter i {
+        font-size: 1.4rem;
+    }
+
+    .filter p {
+        font-size: 0.7rem;
+    }
+
+    .tax-toggle label {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #filters {
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+
+    .filter i {
+        font-size: 1.1rem;
+    }
+
+    .filter p {
+        font-size: 0.65rem;
+    }
+
+    .tax-toggle {
+        opacity: 0.7;
+        height: 2.5rem;
+        margin-left: 0;
+        margin-top: 0.5rem;
+        flex: 1 1 100%;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .tax-toggle label {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .tax-toggle:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+@media (max-width: 480px) {
+    .filter i {
+        font-size: 1.1rem;
+    }
+
+    .filter p {
+        display: none;
+    }
+
+    .tax-toggle label {
+        font-size: 0.6rem;
+    }
+}

@@ -1,0 +1,79 @@
+.white-footer {
+    min-height: 9rem;
+    background: #F7F7F7;
+    color: black;
+    padding: 35px 10px;
+    margin-top: 50px;
+    /* border-top: 1px solid #333; */
+    /* box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.6); */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+}
+
+/* Social Icons */
+.footer-socials a {
+    color: black;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #1b7f6b;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    transform: translateY(-5px);
+}
+
+/* Brand Text */
+.footer-brand {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: black;
+    margin-bottom: 10px;
+}
+.footer-brand:hover {
+    color: #1b7f6b;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    transform: translateY(-5px);
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-container {
+        gap: 12px;
+    }
+
+    .footer-socials a {
+        font-size: 1.3rem;
+        margin: 0 8px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+}

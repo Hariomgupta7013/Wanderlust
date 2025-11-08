@@ -6,6 +6,7 @@
       Sign Up on Wanderlust
     </h2>
 
+    <!-- ✅ Correct action & correct name attributes -->
     <form action="/singup" method="POST" novalidate>
       <!-- Username -->
       <div class="mb-3">
@@ -51,19 +52,14 @@
         ></i>
       </div>
 
-      <!-- Re-enter Password  -->
+      <!-- Confirm Password -->
       <div class="mb-3 position-relative">
-        <label for="password" class="form-label fw-semibold"
-          >Re-Enter Password</label
+        <label for="Confirm_Password" class="form-label fw-semibold"
+          >Re-enter Password</label
         >
-        <input
-          id="Confirm_Password"
-          name="password"
-          type="password"
-          placeholder="Re-Enter Password"
-          class="form-control form-control-lg"
-          required
-        />
+        <input id="Confirm_Password" name="Confirm_Password"
+        type="password" placeholder="Re-enter password" class="form-control
+        form-control-lg" required />
         <i
           class="fa-solid fa-eye toggle-password"
           id="toggleConfirmPassword"
@@ -78,7 +74,6 @@
         </button>
       </div>
 
-      <!-- Login link -->
       <p class="text-center mt-3 mb-0 text-muted">
         Already have an account?
         <a href="/login" class="text-decoration-none fw-semibold text-primary"
@@ -90,17 +85,19 @@
 </div>
 
 <script>
-  // Before submitting, check passwords
-  document.querySelector("form").addEventListener("submit", () => {
+  // ✅ Password match validation
+  document.querySelector("form").addEventListener("submit", (e) => {
     const pass = document.getElementById("password").value;
     const confirmPass = document.getElementById("Confirm_Password").value;
 
     if (pass !== confirmPass) {
       e.preventDefault();
+      alert("Passwords do not match!");
     }
   });
 
-   function togglePasswordVisibility(inputFieldId, iconId) {
+  // ✅ Toggle show/hide password function
+  function togglePasswordVisibility(inputFieldId, iconId) {
     const input = document.getElementById(inputFieldId);
     const icon = document.getElementById(iconId);
 
@@ -108,16 +105,13 @@
       if (input.type === "password") {
         input.type = "text";
         icon.classList.replace("fa-eye", "fa-eye-slash");
-        icon.style.color = "blue"; // Eye color when visible
       } else {
         input.type = "password";
         icon.classList.replace("fa-eye-slash", "fa-eye");
-        icon.style.color = "gray"; // Eye color when hidden
       }
     });
   }
 
-  // Apply on both fields
   togglePasswordVisibility("password", "togglePassword");
   togglePasswordVisibility("Confirm_Password", "toggleConfirmPassword");
 </script>

@@ -1,110 +1,80 @@
+/* Navbar Updated Styling (Signup Page Theme) */
 .navbar {
     height: 5rem;
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
+    background: linear-gradient(135deg, #c8e8ff, #f9fcff, #ffffff);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #d0e4ff;
+    transition: all 0.3s ease;
 }
 
-.navbar-toggler {
-    z-index: 1050;
-    position: relative;
-}
-
+/* Compass Icon - Blue Gradient Color */
 .fa-compass {
-    color: #fe424d;
+    color: #007bff;
     font-size: 2rem;
+    transition: 0.3s;
 }
 
+.fa-compass:hover {
+    transform: scale(1.1);
+}
+
+/* Navbar Links */
 .nav-link {
-    color: #222222 !important;
+    color: #004085 !important;
     font-weight: 500;
     margin: 0 0.5rem;
-    transition: color 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #fe424d !important;
+    color: #007bff !important;
 }
 
+/* Search Button Gradient */
 .search-btn {
-    background-color: #fe424d;
+    background: linear-gradient(90deg, #007bff, #00aaff);
     color: #fff;
     display: flex;
     align-items: center;
     border-radius: 25px;
-    padding: 0.4rem 1rem;
-    transition: all 0.3s;
+    padding: 0.45rem 1rem;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 .search-btn:hover {
-    opacity: 0.7;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
+/* Search Icon Color is White */
 .search-btn i {
     margin-right: 0.5rem;
+    color: #fff;
 }
 
+/* Search Input Glass Effect */
 .search-input {
     border-radius: 25px;
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    border: 1px solid #b8daff;
+    background: #ffffffaa;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
 }
 
-/* Mobile Fullscreen Menu */
+.search-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Mobile Responsive Fullscreen Menu remains same but slight color change */
 @media (max-width: 768px) {
     #navbarNavAltMarkup.collapse.show {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #fff !important;
-        /* Fullscreen white background */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem 1rem;
-        z-index: 9999;
-        overflow-y: auto;
-        transition: all 0.3s ease-in-out;
-        z-index: 1000;
-    }
-
-    /* Center search and icons */
-    .search-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    #navbarNavAltMarkup.collapse.show .search-input,
-    #navbarNavAltMarkup.collapse.show .search-btn {
-        width: 80%;
-        margin: 0.5rem auto;
-    }
-
-    /* Navbar links stacked vertically and black */
-    #navbarNavAltMarkup.collapse.show .navbar-nav {
-        background-color: #fff !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        width: 100%;
+        background: linear-gradient(135deg, #c8e8ff, #ffffff);
     }
 
     #navbarNavAltMarkup.collapse.show .nav-link {
-        color: #000 !important;
-        font-size: 1.2rem;
+        color: #004085 !important;
     }
-
-    #navbarNavAltMarkup.collapse.show .nav-link:hover {
-        color: #fe424d !important;
-    }
-         #navbarNavAltMarkup.collapse.show form {
-             background-color: #fff;
-         }
 }

@@ -78,7 +78,10 @@
 }
 
 .location {
+    margin-top: 0.2rem;
     font-size: 0.85rem;
+    font-weight: bold;
+    font-size: medium;
     color: #666;
 }
 

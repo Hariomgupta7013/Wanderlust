@@ -5,21 +5,26 @@ module.exports.renderSingupForm = (req, res) => {
 };
 
 module.exports.singup = async(req, res) => {
-    try{
-        let {username, email, password} = req.body;
-    const newUser = new User({email, username});
-    const registeredUser = await User.register(newUser, password);
-    // console.log(registeredUser);
-    req.login(registeredUser, (err) => {
-        if(err) {
-            return next(err);
+    try {
+        let { username, email, password, Confirm_Password} = req.body;
+        
+        if(password !== Confirm_Password) {
+            req.flash("error", "Passwords do not match, please try again!");
+            return res.redirect("/singup");
         }
-        req.flash("success", "welcome to wanderlust!");
-        res.redirect("/listings");
-    });
-    
-    } catch(e) {
-        req.flash("error", e.message);
+
+        const newUser = new User({email, username});
+        const registeredUser = await User.register(newUser, password);
+
+        req.login(registeredUser, (err) => {
+            if(err) {
+                return next(err);
+            }
+            req.flash("success", "Welcome to Wanderlust!");
+            res.redirect("/listings");
+        })
+    } catch (err) {
+        req.flash("error", err.massage);
         res.redirect("/singup");
     }
 };

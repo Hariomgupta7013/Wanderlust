@@ -41,84 +41,92 @@
       <!-- Signup link -->
       <p class="text-center mt-3 mb-0 text-muted">
         Don’t have an account?
-        <a href="/singup" class="text-decoration-none fw-semibold text-primary">Sign up</a>
+        <a href="/singup" class="text-decoration-none fw-semibold text-primary"
+          >Sign up</a
+        >
       </p>
+      
+      <div class="text-center mt-2">
+        <a href="/forgot-password" class="text-decoration-none"
+          >Forgot Password?</a
+        >
+      </div>
     </form>
   </div>
 </div>
 
 <style>
-/* Page Background */
-.login-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #c8e8ff, #f9fcff, #ffffff);
-  padding: 20px;
-}
+  /* Page Background */
+  .login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #c8e8ff, #f9fcff, #ffffff);
+    padding: 20px;
+  }
 
-/* Card Box */
-.login-container {
-  width: 100%;
-  max-width: 400px;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.login-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-/* Title Gradient */
-.text-gradient {
-  background: linear-gradient(90deg, #007bff, #00aaff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Input Styling */
-.form-control {
-  border: 1px solid #c7d2fe;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-}
-
-/* Button Styling */
-.btn-gradient {
-  background: linear-gradient(90deg, #007bff, #00aaff);
-  border: none;
-  color: white;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
-
-.btn-gradient:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 576px) {
+  /* Card Box */
   .login-container {
-    padding: 25px 20px;
+    width: 100%;
+    max-width: 400px;
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Title Gradient */
   .text-gradient {
-    font-size: 1.6rem;
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+
+  /* Input Styling */
+  .form-control {
+    border: 1px solid #c7d2fe;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+  }
+
+  /* Button Styling */
   .btn-gradient {
-    font-size: 1rem;
-    padding: 10px;
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    transition: all 0.3s ease;
   }
-}
+
+  .btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.4);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 576px) {
+    .login-container {
+      padding: 25px 20px;
+    }
+    .text-gradient {
+      font-size: 1.6rem;
+    }
+    .btn-gradient {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
 </style>

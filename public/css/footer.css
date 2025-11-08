@@ -1,13 +1,16 @@
+/* Footer Updated Styling (Same as Navbar Theme) */
 .white-footer {
     min-height: 9rem;
-    background: #F7F7F7;
-    color: black;
+    background: linear-gradient(135deg, #c8e8ff, #f9fcff, #ffffff);
+    color: #004085;
     padding: 35px 10px;
     margin-top: 50px;
-    /* border-top: 1px solid #333; */
-    /* box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.6); */
+    border-top: 1px solid #d0e4ff;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -5px 15px rgba(0, 123, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
 .footer-container {
@@ -18,45 +21,46 @@
     gap: 18px;
 }
 
+/* Brand Text */
+.footer-brand {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #004085;
+    transition: 0.3s ease;
+}
+
+.footer-brand:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
 /* Social Icons */
 .footer-socials a {
-    color: black;
+    color: #004085;
     font-size: 1.5rem;
     margin: 0 10px;
     transition: all 0.3s ease;
 }
 
 .footer-socials a:hover {
-    color: #1b7f6b;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    transform: translateY(-5px);
+    color: #007bff;
+    transform: scale(1.2);
+    text-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
-/* Brand Text */
-.footer-brand {
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    color: black;
-    margin-bottom: 10px;
-}
-.footer-brand:hover {
-    color: #1b7f6b;
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-    transform: translateY(-5px);
-}
-
+/* Footer Links */
 .footer-links a {
     margin: 0 10px;
-    color: black;
+    color: #004085;
     text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #00ffcc;
-    text-shadow: 0 0 8px #00ffcc;
+    color: #007bff;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
 }
 
 /* Responsive Design */
